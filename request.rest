@@ -1,2 +1,26 @@
+POST http://localhost:3000/posts
+Content-Type: application/json
 
+{
+  "senderId": "64b3ef869eebbe1f6d4b1234", 
+  "title": "Sample Post",
+  "content": "This is a test post"
+}
+
+### Get All Posts
 GET http://localhost:3000/posts
+
+### Get Post by ID
+GET http://localhost:3000/posts/67828bd16bd15ade8e998292
+
+### Get Posts by Sender ID
+GET http://localhost:3000/posts?sender=64b3ef869eebbe1f6d4b1234
+
+### Update a Post
+PUT http://localhost:3000/posts/67828bd16bd15ade8e998292
+Content-Type: application/json
+
+{
+  "title": "Updated Post",
+  "content": "This post has been updated"
+}
