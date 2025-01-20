@@ -3,6 +3,7 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose');
 require('dotenv').config()
 const postsRouter = require('./routes/posts')
+const commentsRouter = require('./routes/comments');
 
 const app = express()
 
@@ -20,6 +21,7 @@ mongoose
 const port = process.env.PORT
 
 app.use('/posts', postsRouter)
+app.use('/comments', commentsRouter);
 
 app.listen(port, () => {
     console.log(`app listening at port ${port}`);
